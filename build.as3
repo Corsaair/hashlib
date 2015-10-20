@@ -1,0 +1,11 @@
+import redbean.*;
+import shell.FileSystem;
+
+compile( "src/hashlib.as" );
+
+if( FileSystem.exists( "hashlib.abc" ) )
+{
+	FileSystem.removeFile( "hashlib.abc" );
+}
+
+FileSystem.move( "src/hashlib.abc", "hashlib.abc" );
