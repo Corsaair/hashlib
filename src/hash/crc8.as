@@ -48,12 +48,8 @@ package hash
             return table;
         }
         
-        // ---- CONFIG ----
-        
         private static var _poly:uint = 0xd5;
         private static var _init:uint = 0x00;
-        
-        // ---- CONFIG ----
         
         private var _crc:uint;
         private var _length:uint;
@@ -61,6 +57,11 @@ package hash
         
         /**
          * Creates a CRC-8 object. 
+         *
+         * @playerversion Flash 10
+         * @playerversion AIR 1.5.3
+         * @playerversion AVM 0.4
+         * @langversion 3.0
          */
         public function crc8()
         {
@@ -77,12 +78,22 @@ package hash
          * or <code>Endian.LITTLE_ENDIAN</code> for "Least significant bit first".
          * </p>
          * 
+         * @playerversion Flash 10
+         * @playerversion AIR 1.5.3
+         * @playerversion AVM 0.4
+         * @langversion 3.0
+         * 
          * @see http://en.wikipedia.org/wiki/Computation_of_cyclic_redundancy_checks#Bit_ordering_.28endianness.29 Computation of CRC - Bit ordering (endianness)
          */
         public function get endian():String { return _endian; }
         
         /**
          * Returns the length the CRC.
+         * 
+         * @playerversion Flash 10
+         * @playerversion AIR 1.5.3
+         * @playerversion AVM 0.4
+         * @langversion 3.0
          */
         public function get length():uint { return _length; }
         
@@ -93,6 +104,11 @@ package hash
          * @param offset A zero-based index indicating the position into the array to begin reading.
          * @param length An unsigned integer indicating how far into the buffer to read
          *               (if <code>0</code>, the length of the ByteArray is used).
+         * 
+         * @playerversion Flash 10
+         * @playerversion AIR 1.5.3
+         * @playerversion AVM 0.4
+         * @langversion 3.0
          */
         public function update( bytes:ByteArray, offset:uint = 0, length:uint = 0 ):void
         {
@@ -115,6 +131,11 @@ package hash
         
         /**
          * Resets the CRC to its initial value.
+         *
+         * @playerversion Flash 10
+         * @playerversion AIR 1.5.3
+         * @playerversion AVM 0.4
+         * @langversion 3.0
          */
         public function reset():void
         {
@@ -125,6 +146,11 @@ package hash
          * Returns the primitive value type of the CRC object (unsigned integer).
          * 
          * @return a 8bits digest
+         *
+         * @playerversion Flash 10
+         * @playerversion AIR 1.5.3
+         * @playerversion AVM 0.4
+         * @langversion 3.0
          */
         public function valueOf():uint
         {
@@ -139,6 +165,11 @@ package hash
          *              the radix parameter, the default value is <code>16</code>.
          * 
          * @return The numeric representation of the CRC object as a string.
+         *
+         * @playerversion Flash 10
+         * @playerversion AIR 1.5.3
+         * @playerversion AVM 0.4
+         * @langversion 3.0
          */
         public function toString( radix:Number = 16 ):String
         {
