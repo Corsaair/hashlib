@@ -38,7 +38,7 @@
         <property name="build.fatswc" value="true" />
         <property name="build.nodoc" value="false" />
 
-        <property name="build.release" value="false" />
+        <property name="build.release" value="true" />
         <property name="build.nozip" value="false" />
 
         
@@ -146,6 +146,7 @@
 
         <sequential unless:true="${build.nodoc}">
             
+            
             <asdoc
                 output="${basedir}/docs/${project.name}"
                 templates-path="${basedir}/build/doc/templates/"
@@ -167,9 +168,52 @@
                     <include name="redtamarin.swc"/>
                 </external-library-path>
 
+                <!-- this does not work, not all methods and properties are not documented -->
+                <!--
                 <doc-sources path-element="${basedir}/src/${project.name}.as"/>
+                 -->
+
+                <!-- this alternative works -->
+                <doc-sources path-element="${basedir}/src"/>
+                <source-path path-element="${basedir}/src" />
+                <exclude-sources path-element="${basedir}/src/${project.name}.as" />
+
                 <package-description-file>${basedir}/build/doc/package.description.xml</package-description-file>
             </asdoc>
+            
+            <!--
+            <asdoc
+                output="${basedir}/docs/${project.name}"
+                templates-path="${basedir}/build/doc/templates/"
+                main-title="${project.fullname}"
+                footer="${project.name} v${project.version}"
+                window-title="${project.fullname} v${project.version}"
+                left-frameset-width="256"
+                keep-xml="${build.fatswc}"
+                skip-xsl="false"
+                warnings="false"
+                strict="false"
+                failonerror="true"
+                fork="true"
+            >
+                <verbose-stacktraces>true</verbose-stacktraces>
+                <load-config filename="${FLEX_HOME}/frameworks/air-config.xml"/>
+                <doc-sources path-element="${basedir}/src"/>
+                <source-path path-element="${basedir}/src" />
+
+                <external-library-path dir="${FLEX_HOME}/frameworks/libs/air/" append="true">
+                    <include name="airglobal.swc"/>
+                </external-library-path>
+
+                <external-library-path dir="${basedir}/lib-swc" append="true">
+                    <include name="redtamarin.swc"/>
+                </external-library-path>
+
+                <exclude-sources path-element="${basedir}/src/${project.name}.as" />
+
+                <package-description-file>${basedir}/build/doc/package.description.xml</package-description-file>
+            </asdoc>
+             -->
 
             <sequential if:true="${build.fatswc}">
 
@@ -184,7 +228,7 @@
                 </zip>
 
             </sequential>
-            
+
             <delete dir="${basedir}/docs/${project.name}/tempdita" />
             
         </sequential>
