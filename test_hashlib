@@ -136,4 +136,35 @@ trace( "            xmodem = " + uintToHex( crc_16.valueOf() ) );
 
 
 // 32bits
-// TODO
+var crc_32;
+crc_32 = new crc32();
+crc_32.update( bytes );
+trace( "             crc32 = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new crc32_bzip2();
+crc_32.update( bytes );
+trace( "       crc32_bzip2 = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new crc32_c();
+crc_32.update( bytes );
+trace( "           crc32_c = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new crc32_d();
+crc_32.update( bytes );
+trace( "           crc32_d = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new crc32_k();
+crc_32.update( bytes );
+trace( "           crc32_k = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new crc32_mpeg2();
+crc_32.update( bytes );
+trace( "       crc32_mpeg2 = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new crc32_posix();
+crc_32.update( bytes );
+trace( "       crc32_posix = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new crc32_q();
+crc_32.update( bytes );
+trace( "           crc32_q = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new jamcrc();
+crc_32.update( bytes );
+trace( "            jamcrc = " + uintToHex( crc_32.valueOf() ) );
+crc_32 = new xfer();
+crc_32.update( bytes );
+trace( "              xfer = " + uintToHex( crc_32.valueOf() ) );
+
