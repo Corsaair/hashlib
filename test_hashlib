@@ -33,6 +33,7 @@ trace( "               fnv = " + uintToHex(  fnv( bytes ) ) );
 trace( "                js = " + uintToHex(   js( bytes ) ) );
 trace( "               pjw = " + uintToHex(  pjw( bytes ) ) );
 trace( "                rs = " + uintToHex(   rs( bytes ) ) );
+trace( "              sdbm = " + uintToHex( sdbm( bytes ) ) );
 
 
 // Cyclic redundancy checks
