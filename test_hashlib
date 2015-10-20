@@ -34,6 +34,7 @@ trace( "                js = " + uintToHex(   js( bytes ) ) );
 trace( "               pjw = " + uintToHex(  pjw( bytes ) ) );
 trace( "                rs = " + uintToHex(   rs( bytes ) ) );
 
+
 // Cyclic redundancy checks
 // 8bits
 var crc_8;
@@ -70,68 +71,52 @@ trace( "        crc8_wcdma = " + uintToHex( crc_8.valueOf() ) );
 
 
 // 16bits
-// TODO
 var crc_16;
 crc_16 = new crc16();
 crc_16.update( bytes );
 trace( "             crc16 = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_aug_ccitt();
 crc_16.update( bytes );
 trace( "   crc16_aug_ccitt = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_buypass();
 crc_16.update( bytes );
 trace( "     crc16_buypass = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_ccitt_false();
 crc_16.update( bytes );
 trace( " crc16_ccitt_false = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_dds10();
 crc_16.update( bytes );
 trace( "       crc16_dds10 = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_dect_r();
 crc_16.update( bytes );
 trace( "      crc16_dect_r = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_dect_x();
 crc_16.update( bytes );
 trace( "      crc16_dect_x = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_dnp();
 crc_16.update( bytes );
 trace( "         crc16_dnp = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_en13757();
 crc_16.update( bytes );
 trace( "     crc16_en13757 = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_genibus();
 crc_16.update( bytes );
 trace( "     crc16_genibus = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_maxim();
 crc_16.update( bytes );
 trace( "       crc16_maxim = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_mcrf4xx();
 crc_16.update( bytes );
 trace( "     crc16_mcrf4xx = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_riello();
 crc_16.update( bytes );
 trace( "      crc16_riello = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_t10dif();
 crc_16.update( bytes );
 trace( "      crc16_t10dif = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_teledisk();
 crc_16.update( bytes );
 trace( "    crc16_teledisk = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new crc16_usb();
 crc_16.update( bytes );
 trace( "         crc16_usb = " + uintToHex( crc_16.valueOf() ) );
@@ -139,15 +124,12 @@ trace( "         crc16_usb = " + uintToHex( crc_16.valueOf() ) );
 crc_16 = new kermit();
 crc_16.update( bytes );
 trace( "            kermit = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new modbus();
 crc_16.update( bytes );
 trace( "            modbus = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new x25();
 crc_16.update( bytes );
 trace( "               x25 = " + uintToHex( crc_16.valueOf() ) );
-
 crc_16 = new xmodem();
 crc_16.update( bytes );
 trace( "            xmodem = " + uintToHex( crc_16.valueOf() ) );
