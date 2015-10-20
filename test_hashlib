@@ -23,16 +23,54 @@ var bytes = new ByteArray();
     bytes.writeUTFBytes( str );
 
 // Non-cryptographic hash functions
-trace( "  ap = " + uintToHex(   ap( bytes ) ) );
-trace( "bkdr = " + uintToHex( bkdr( bytes ) ) );
-trace( " brp = " + uintToHex(  brp( bytes ) ) );
-trace( " dek = " + uintToHex(  dek( bytes ) ) );
-trace( " djb = " + uintToHex(  djb( bytes ) ) );
-trace( " elf = " + uintToHex(  elf( bytes ) ) );
-trace( " fnv = " + uintToHex(  fnv( bytes ) ) );
-trace( "  js = " + uintToHex(   js( bytes ) ) );
-trace( " pjw = " + uintToHex(  pjw( bytes ) ) );
-trace( "  rs = " + uintToHex(   rs( bytes ) ) );
+trace( "         ap = " + uintToHex(   ap( bytes ) ) );
+trace( "       bkdr = " + uintToHex( bkdr( bytes ) ) );
+trace( "        brp = " + uintToHex(  brp( bytes ) ) );
+trace( "        dek = " + uintToHex(  dek( bytes ) ) );
+trace( "        djb = " + uintToHex(  djb( bytes ) ) );
+trace( "        elf = " + uintToHex(  elf( bytes ) ) );
+trace( "        fnv = " + uintToHex(  fnv( bytes ) ) );
+trace( "         js = " + uintToHex(   js( bytes ) ) );
+trace( "        pjw = " + uintToHex(  pjw( bytes ) ) );
+trace( "         rs = " + uintToHex(   rs( bytes ) ) );
 
 // Cyclic redundancy checks
+// 8bits
+var crc_8;
+crc_8 = new crc8();
+crc_8.update( bytes );
+trace( "       crc8 = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_atm();
+crc_8.update( bytes );
+trace( "   crc8_atm = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_ccitt();
+crc_8.update( bytes );
+trace( " crc8_ccitt = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_darc();
+crc_8.update( bytes );
+trace( "  crc8_darc = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_icode();
+crc_8.update( bytes );
+trace( " crc8_icode = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_itu();
+crc_8.update( bytes );
+trace( "   crc8_itu = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_j1850();
+crc_8.update( bytes );
+trace( " crc8_j1850 = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_maxim();
+crc_8.update( bytes );
+trace( " crc8_maxim = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_rohc();
+crc_8.update( bytes );
+trace( "  crc8_rohc = " + uintToHex( crc_8.valueOf() ) );
+crc_8 = new crc8_wcdma();
+crc_8.update( bytes );
+trace( " crc8_wcdma = " + uintToHex( crc_8.valueOf() ) );
+
+
+// 16bits
+// TODO
+
+// 32bits
 // TODO
