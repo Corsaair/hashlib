@@ -184,7 +184,7 @@
                 </zip>
 
             </sequential>
-
+            
             <delete dir="${basedir}/docs/${project.name}/tempdita" />
             
         </sequential>
