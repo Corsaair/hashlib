@@ -18,7 +18,7 @@ package hash
      */ 
     public function js( bytes:ByteArray ):uint
     {
-        var hash:uint = 0x4E67C6A7; //1315423911
+        var h:uint = 0x4E67C6A7; //1315423911
         
         var i:uint;
         var c:uint;
@@ -27,10 +27,10 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c     = uint( bytes[ i ] );
-            hash ^= uint( ( hash << 5 ) + c + ( hash >>> 2 ));
+            h ^= uint( ( h << 5 ) + c + ( h >>> 2 ));
         }
         
-        return hash;
+        return h;
     }
 
 }

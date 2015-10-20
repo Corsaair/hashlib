@@ -27,7 +27,7 @@ package hash
     public function fnv( bytes:ByteArray ):uint
     {
         var fnv_prime:uint = 0x811C9DC5;
-        var hash:uint;
+        var h:uint;
         
         var i:uint;
         var c:uint;
@@ -36,11 +36,11 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = uint( hash * fnv_prime );
-            hash = uint( hash ^ c);
+            h = uint( h * fnv_prime );
+            h = uint( h ^ c);
         }
         
-        return hash;
+        return h;
     }
 
 }

@@ -23,7 +23,7 @@ package hash
      */
     public function elf( bytes:ByteArray ):uint
     {
-        var hash:uint;
+        var h:uint;
         var x:uint;
         
         var i:uint;
@@ -33,18 +33,18 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = uint( hash << 4 ) + c;
-            x    = uint( hash & 0xF0000000 );
+            h = uint( h << 4 ) + c;
+            x    = uint( h & 0xF0000000 );
             
             if( x != 0 )
             {
-                hash = uint( hash ^ (x >>> 24) );
+                h = uint( h ^ (x >>> 24) );
             }
             
-            hash = uint( hash & ~x );
+            h = uint( h & ~x );
         }
         
-        return hash;
+        return h;
     }
 
 }

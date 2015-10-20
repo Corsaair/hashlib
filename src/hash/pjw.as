@@ -28,7 +28,7 @@ package hash
         var threeQuarters:uint     = uint( uint( bitsInUnsignedInt * 3 ) / 4 );
         var oneEighth:uint         = uint( bitsInUnsignedInt / 8 );
         var highBits:uint          = uint( 0xFFFFFFFF << (bitsInUnsignedInt - oneEighth) );
-        var hash:uint;
+        var h:uint;
         var test:uint;
         
         var i:uint;
@@ -38,16 +38,16 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = uint( hash << oneEighth ) + c;
-            test = hash & highBits;
+            h = uint( h << oneEighth ) + c;
+            test = h & highBits;
             
             if( test != 0 )
             {
-                hash = (( hash ^ (test >>> threeQuarters)) & (~highBits));
+                h = (( h ^ (test >>> threeQuarters)) & (~highBits));
             }
         }
         
-        return hash;
+        return h;
     }
 
 }

@@ -23,7 +23,7 @@ package hash
      */
     public function djb( bytes:ByteArray ):uint
     {
-        var hash:uint = 0x1505; //5381
+        var h:uint = 0x1505; //5381
         
         var i:uint;
         var c:uint;
@@ -32,10 +32,10 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = ( uint( hash << 5 ) + hash ) + c;
+            h = ( uint( h << 5 ) + h ) + c;
         }
         
-        return hash;
+        return h;
     }
 
 }

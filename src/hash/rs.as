@@ -24,7 +24,7 @@ package hash
     {
         var b:uint    = 0x5C6B7; //378551
         var a:uint    = 0xF8C9; //63689
-        var hash:uint = 0;
+        var h:uint = 0;
         
         var i:uint;
         var c:uint;
@@ -33,11 +33,11 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = uint( hash *  a ) + c;
+            h = uint( h *  a ) + c;
             a    = uint( a * b );
         }
         
-        return hash;
+        return h;
     }
 
 }

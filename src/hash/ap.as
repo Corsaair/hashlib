@@ -20,7 +20,7 @@ package hash
      */
     public function ap( bytes:ByteArray ):uint
     {
-        var hash:uint = 0xAAAAAAAA;
+        var h:uint = 0xAAAAAAAA;
         
         var i:uint;
         var c:uint;
@@ -32,15 +32,15 @@ package hash
             
             if( (i & 1) == 0 )
             {
-                hash ^= uint( uint( hash << 7 ) ^ uint(c * uint( hash >>> 3 )) );
+                h ^= uint( uint( h << 7 ) ^ uint(c * uint( h >>> 3 )) );
             }
             else
             {
-                hash ^= uint( ~( uint( hash << 11 ) + uint(c ^ uint( hash >>> 5 )) ));
+                h ^= uint( ~( uint( h << 11 ) + uint(c ^ uint( h >>> 5 )) ));
             }
         }
         
-        return hash;
+        return h;
     }
 
 }

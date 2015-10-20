@@ -20,7 +20,7 @@ package hash
      */
     public function brp( bytes:ByteArray ):uint
     {
-        var hash:uint;
+        var h:uint;
         
         var i:uint;
         var c:uint;
@@ -29,10 +29,10 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = uint( hash << 7 )  ^ c;
+            h = uint( h << 7 )  ^ c;
         }
         
-        return hash;
+        return h;
     }
 
 }

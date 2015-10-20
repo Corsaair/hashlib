@@ -26,15 +26,15 @@ package hash
         var i:uint;
         var c:uint;
         var len:uint  = bytes.length;
-        var hash:uint = len;
+        var h:uint = len;
         bytes.position = 0;
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = ( uint( hash << 5 ) ^ uint( hash >>> 27 ) ) ^ c;
+            h = ( uint( h << 5 ) ^ uint( h >>> 27 ) ) ^ c;
         }
         
-        return hash;
+        return h;
     }
 
 }

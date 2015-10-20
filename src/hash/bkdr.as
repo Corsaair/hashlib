@@ -27,7 +27,7 @@ package hash
      */
     public function bkdr( bytes:ByteArray, seed:uint = 131 ):uint
     {
-        var hash:uint;
+        var h:uint;
         
         var i:uint;
         var c:uint;
@@ -36,10 +36,10 @@ package hash
         for( i = 0; i < len; i++ )
         {
             c    = uint( bytes[ i ] );
-            hash = uint( hash * seed ) + c;
+            h = uint( h * seed ) + c;
         }
         
-        return hash;
+        return h;
     }
 
 }
